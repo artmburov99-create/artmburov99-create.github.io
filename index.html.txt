@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Приглашение | Важная встреча</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #1a1a1e 0%, #0f0f13 100%);
+            font-family: 'Segoe UI', 'Roboto', 'Merriweather', Georgia, serif;
+            color: #eeece8;
+            line-height: 1.5;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(25, 25, 30, 0.75);
+            backdrop-filter: blur(2px);
+            border-radius: 2rem;
+            padding: 2rem 1.8rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(230, 210, 170, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .fade-in {
+            animation: fadeUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .accent-line {
+            width: 60px;
+            height: 2px;
+            background: #dbb46a;
+            margin: 1.2rem 0 1rem 0;
+            border-radius: 2px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            letter-spacing: -0.3px;
+            color: #f5efdf;
+            line-height: 1.3;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-top: 1.5rem;
+            color: #dbb46a;
+        }
+
+        .quest-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin: 2rem 0;
+        }
+
+        .step {
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 1.2rem;
+            padding: 1rem 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            backdrop-filter: blur(4px);
+            transition: transform 0.2s;
+            border: 1px solid rgba(220, 190, 120, 0.2);
+        }
+
+        .step-icon {
+            font-size: 2rem;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .step-text p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #ddd9ce;
+        }
+
+        .step-text strong {
+            color: #e7cf97;
+            font-weight: 500;
+        }
+
+        .btn-reveal {
+            background: transparent;
+            border: 1.5px solid #dbb46a;
+            color: #dbb46a;
+            padding: 0.9rem 1.8rem;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 3rem;
+            cursor: pointer;
+            margin: 1.5rem 0 1rem 0;
+            transition: all 0.25s;
+            width: 100%;
+            font-family: inherit;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(8px);
+        }
+
+        .btn-reveal:hover {
+            background: #dbb46a;
+            color: #0f0f13;
+            border-color: #dbb46a;
+            box-shadow: 0 4px 12px rgba(219, 180, 106, 0.3);
+        }
+
+        .hidden-info {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s ease-out, margin 0.2s;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 1.2rem;
+            margin-top: 0;
+        }
+
+        .hidden-info.show {
+            max-height: 300px;
+            margin-top: 1.5rem;
+            padding: 1.2rem;
+        }
+
+        .restaurant-card {
+            text-align: center;
+        }
+
+        .restaurant-name {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #eedbae;
+            margin: 0.5rem 0;
+        }
+
+        .restaurant-address {
+            font-size: 1rem;
+            color: #cbc3b0;
+            margin: 0.3rem 0;
+        }
+
+        .footer {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.7rem;
+            color: #5a5548;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            .step-icon {
+                font-size: 1.6rem;
+                min-width: 42px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="fade-in">
+            <div class="accent-line"></div>
+            <h1>Позволь предоставить тебе путь, который я подготовил до места нашей встречи</h1>
+        </div>
+
+        <div class="fade-in delay-1">
+            <h2>Вот краткий план</h2>
+            <p style="margin-top: 0.3rem;">Я приготовил два коротких письма. Каждое в отдельной коробке.</p>
+        </div>
+
+        <div class="quest-steps">
+            <div class="step fade-in delay-1">
+                <div class="step-icon">📦</div>
+                <div class="step-text"><strong>Первая коробка</strong><br>Кофе Густо Kontrast (летняя веранда). Подойди к администратору, и от моего имени тебе отдадут коробку.</div>
+            </div>
+            <div class="step fade-in delay-2">
+                <div class="step-icon">📦</div>
+                <div class="step-text"><strong>Вторая коробка</strong><br>(Даирчик сити) сквер им. Гейдара Алиева, возле его памятника будет ждать тебя «золотой» мальчик, и у него будет твоё письмо.</div>
+            </div>
+        </div>
+
+        <div class="fade-in delay-2">
+            <button id="revealBtn" class="btn-reveal">⟳ Я готова узнать, где ресторан</button>
+        </div>
+
+        <div id="finalSpot" class="hidden-info">
+            <div class="restaurant-card">
+                <div class="step-icon" style="font-size: 2rem;">🍽️</div>
+                <div class="restaurant-name">Рестобар</div>
+                <div class="restaurant-address">Боевая улица, 2а, 4 этаж</div>
+            </div>
+        </div>
+
+        <div class="fade-in delay-3">
+            <div class="accent-line" style="width: 40px; margin-top: 1.8rem;"></div>
+            <p style="font-size: 0.9rem; font-style: italic; color: #cbc3b0;">«Не переживай, если что-то пойдёт не так, просто пиши мне, я всё решу.»</p>
+        </div>
+        <div class="footer">
+            ты лучшая, помни ;)
+        </div>
+    </div>
+
+    <script>
+        const revealBtn = document.getElementById('revealBtn');
+        const finalSpotDiv = document.getElementById('finalSpot');
+
+        revealBtn.addEventListener('click', () => {
+            finalSpotDiv.classList.toggle('show');
+            if (finalSpotDiv.classList.contains('show')) {
+                revealBtn.textContent = '✓ Ресторан открыт, я жду';
+                revealBtn.style.background = '#dbb46a20';
+            } else {
+                revealBtn.textContent = '⟳ Я готова узнать, где ресторан';
+                revealBtn.style.background = 'transparent';
+            }
+        });
+    </script>
+</body>
+</html>
